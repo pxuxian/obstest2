@@ -5,10 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.ailk.obs.dao.UserDao;
 import com.ailk.obs.db.DBUtil;
 import com.ailk.obs.model.User;
 
+@Component
 public class UserDaoImpl implements UserDao {
 
 	// 通过username查找用户，返回记录条数

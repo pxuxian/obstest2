@@ -2,13 +2,17 @@ package com.ailk.obs.service.imp;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.ailk.obs.dao.UserDao;
-import com.ailk.obs.dao.impl.UserDaoImpl;
 import com.ailk.obs.model.User;
 import com.ailk.obs.service.UserService;
 
+@Component
 public class UserServiceImpl implements UserService {
-	UserDao userDao = new UserDaoImpl();
+	@Autowired
+	private UserDao userDao;
 
 	// ÊÇ·ñ×¢²á
 	public boolean isRegister(User user) {

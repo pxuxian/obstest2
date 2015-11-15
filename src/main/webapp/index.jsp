@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-hello, myproject
+hello, myproject2
 </body>
 </html>

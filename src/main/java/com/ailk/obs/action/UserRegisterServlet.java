@@ -1,4 +1,4 @@
-package com.ailk.obs.web;
+package com.ailk.obs.action;
 
 import java.io.IOException;
 import java.sql.Date;
