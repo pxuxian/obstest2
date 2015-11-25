@@ -1,4 +1,4 @@
-package com.ailk.obs.dao;
+/*package com.ailk.obs.dao;
 
 import java.util.List;
 
@@ -46,3 +46,4 @@ public class UserDaoTest {
 	}
 
 }
+*/

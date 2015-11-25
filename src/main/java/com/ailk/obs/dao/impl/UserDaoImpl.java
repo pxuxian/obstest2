@@ -4,9 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-
 import org.springframework.stereotype.Component;
-
 import com.ailk.obs.dao.UserDao;
 import com.ailk.obs.db.DBUtil;
 import com.ailk.obs.model.User;
@@ -14,21 +12,18 @@ import com.ailk.obs.model.User;
 @Component
 public class UserDaoImpl implements UserDao {
 
-	// 通过username查找用户，返回记录条数
 	public int getByUserName(String userName) {
 		String sql = "select * from t_user where userName='" + userName + "'";
 		System.out.println("sql === " + sql);
 		return DBUtil.executeSelect(sql);
 	}
 
-	// 通过username查找用户，返回username和passwd
 	public List<String> getUserByName(String userName) {
 		String sql = "select  username,passwd from  t_user where userName = '" + userName + "'";
 		List<String> userList = DBUtil.executeSelectRS(sql);
 		return userList;
 	}
 
-	// 用户信息入库
 	public void addUser(User user) {
 
 		Connection conn = DBUtil.getConnection();

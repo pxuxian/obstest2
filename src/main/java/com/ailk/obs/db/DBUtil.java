@@ -17,7 +17,6 @@ public class DBUtil {
 	private final static String DBUSER = PropertiesUtil.getInstance().get("DB_USERNAME");
 	private final static String DBPASSWORD = PropertiesUtil.getInstance().get("DB_PASSWORD");
 
-	// »ñµÃÊý¾Ý¿âÁ¬½Ó
 	public static Connection getConnection() {
 		try {
 			Class.forName(DBDRIVER);
@@ -61,7 +60,7 @@ public class DBUtil {
 	}
 
 	/*
-	 * Ö´ÐÐselect²éÑ¯£¬·µ»Ø¼ÇÂ¼×ÜÊý
+	 * Ö´ï¿½ï¿½selectï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static int executeSelect(String sql) {
 		Connection conn = null;
@@ -89,7 +88,7 @@ public class DBUtil {
 	}
 
 	/**
-	 * Ö´ÐÐselect²éÑ¯ µ±²éÑ¯ ½á¹ûÓÐ¶àÌõ¼ÇÂ¼Ê±·µ»ØÃ¿Ìõ¼ÇÂ¼µÄµÚÒ»¸öÖµ ·ÅÈë List£» µ±²éÑ¯½á¹ûÎªÒ»Ìõ¼ÇÂ¼µÄ¶à¸ö×Ö¶ÎÊ±£¬°ÑÃ¿¸ö×Ö¶Î·ÅÈëList£»
+	 * Ö´ï¿½ï¿½selectï¿½ï¿½Ñ¯ ï¿½ï¿½ï¿½ï¿½Ñ¯ ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½Â¼Ê±ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Â¼ï¿½Äµï¿½Ò»ï¿½ï¿½Öµ ï¿½ï¿½ï¿½ï¿½ Listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ÎªÒ»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½Ä¶ï¿½ï¿½ï¿½Ö¶ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½Ö¶Î·ï¿½ï¿½ï¿½Listï¿½ï¿½
 	 * 
 	 * @param sql
 	 * @return
@@ -106,9 +105,9 @@ public class DBUtil {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			ResultSetMetaData rsmd = rs.getMetaData();
-			// ×ÜÁÐÊýint
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½int
 			int size = rsmd.getColumnCount();
-			// ¶àÁÐÒ»Ìõ¼ÇÂ¼
+			// ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼
 			if (count == 1) {
 				while (rs.next()) {
 					for (int i = 1; i <= size; i++) {
@@ -120,7 +119,7 @@ public class DBUtil {
 					}
 				}
 			} else {
-				// Ò»ÁÐ¶àÌõ¼ÇÂ¼
+				// Ò»ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½Â¼
 				while (rs.next()) {
 					list.add(rs.getString(1));
 				}

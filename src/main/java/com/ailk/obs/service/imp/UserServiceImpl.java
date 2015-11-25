@@ -14,7 +14,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
 
-	// ÊÇ·ñ×¢²á
 	public boolean isRegister(User user) {
 		String userName = user.getUserName();
 		int userCount = userDao.getByUserName(userName);
@@ -25,12 +24,10 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
-	// ×¢²á
 	public void register(User user) {
 		userDao.addUser(user);
 	}
 
-	// ÊÇ·ñÔÊÐíµÇÈë
 	public boolean login(User user) {
 		String userName = user.getUserName();
 		String passwd = user.getPassWd();

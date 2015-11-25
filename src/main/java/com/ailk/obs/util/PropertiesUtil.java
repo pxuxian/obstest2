@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-//配置文件读取，单例实现
 public class PropertiesUtil {
 	private static final String BASECONFIG_FILE = "baseConfig.cfg";
 	private static PropertiesUtil loder = new PropertiesUtil(BASECONFIG_FILE);

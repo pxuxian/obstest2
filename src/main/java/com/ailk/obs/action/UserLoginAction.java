@@ -22,24 +22,43 @@ public class UserLoginAction {
 	HttpServletResponse response = ServletActionContext.getResponse();
 	@Autowired
 	private UserService userService;
+	private String userName;
+	private String passWd;
 
 	@Action(value = "login", results = { @Result(name = "success", location = "/result.jsp"),
 			@Result(name = "error", location = "/error.jsp") })
-	public String login() {
-		String userName = request.getParameter("userName");
-		String passWord = request.getParameter("passWord");
-		User user = new User(userName, passWord);
+	public String execute() {
+		System.out.println("UserLoginAction.execute()....");
+		System.out.println("userName = " + userName);
+
+		User user = new User(userName, passWd);
 		boolean loginResult = false;
 		try {
 			loginResult = userService.login(user);
-			request.setAttribute("info", "登入成功");
+			request.setAttribute("info", "login success!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		if (!loginResult) {
-			request.setAttribute("info", "登入失败");
+			request.setAttribute("info", "login fail!");
 		}
 		return "success";
+	}
+
+	public String getuserName() {
+		return userName;
+	}
+
+	public void setuserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getpassWd() {
+		return passWd;
+	}
+
+	public void setpassWd(String passWd) {
+		this.passWd = passWd;
 	}
 
 }
